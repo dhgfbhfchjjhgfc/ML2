@@ -1,0 +1,35 @@
+{
+  "dataset": "V20",
+  "source": "data\\raw\\creditcard.csv",
+  "strategy": "stratified",
+  "seed": 42,
+  "smoke": false,
+  "cleaning": {
+    "rows_in": 284807,
+    "exact_duplicates": 9144,
+    "missing_target": 0,
+    "rows_out": 275663
+  },
+  "sizes": {
+    "train": 192963,
+    "val": 41350,
+    "test": 41350
+  },
+  "leakage": {
+    "ok": true
+  },
+  "target_share": {
+    "train": {
+      "0": 0.9983,
+      "1": 0.0017
+    },
+    "val": {
+      "0": 0.9983,
+      "1": 0.0017
+    },
+    "test": {
+      "0": 0.9983,
+      "1": 0.0017
+    }
+  }
+}

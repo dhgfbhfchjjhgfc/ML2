@@ -1,24 +1,36 @@
-# Контракт данных: какие колонки ждём, какого они типа и в каких пределах.
-# По нему работают data-тесты (tests/test_data.py) и функция mlproject.validate.validate.
-# dtype: int | float | str | category | date | bool
-# Необязательные поля: nullable (по умолчанию true), unique, min, max, allowed, max_missing (доля 0..1)
-
+# Контракт данных: Credit Card Fraud Detection (OpenML ID 1597)
 columns:
-  customer_id:      {dtype: str, nullable: false, unique: true}
-  signup_date:      {dtype: date, nullable: false, min: "2015-01-01", max: "2026-12-31"}
-  tenure_months:    {dtype: int, nullable: false, min: 0, max: 240}
-  monthly_charges:  {dtype: float, nullable: false, min: 0, max: 1000}
-  total_charges:    {dtype: float, min: 0, max: 300000, max_missing: 0.05}
-  contract:         {dtype: category, nullable: false, allowed: [month-to-month, one-year, two-year]}
-  payment_method:   {dtype: category, nullable: false, allowed: [card, bank_transfer, e_wallet, cash]}
-  internet_service: {dtype: category, nullable: false, allowed: [dsl, fiber, none]}
-  region:           {dtype: category, nullable: false, allowed: [center, north, south, east, west]}
-  support_calls:    {dtype: int, nullable: false, min: 0, max: 100}
-  num_services:     {dtype: int, nullable: false, min: 0, max: 20}
-  churn:            {dtype: int, nullable: false, allowed: [0, 1]}
+  V1: {dtype: float, nullable: false, min: -60.0, max: 10.0}
+  V2: {dtype: float, nullable: false, min: -80.0, max: 30.0}
+  V3: {dtype: float, nullable: false, min: -50.0, max: 10.0}
+  V4: {dtype: float, nullable: false, min: -10.0, max: 20.0}
+  V5: {dtype: float, nullable: false, min: -120.0, max: 40.0}
+  V6: {dtype: float, nullable: false, min: -30.0, max: 80.0}
+  V7: {dtype: float, nullable: false, min: -50.0, max: 130.0}
+  V8: {dtype: float, nullable: false, min: -80.0, max: 30.0}
+  V9: {dtype: float, nullable: false, min: -20.0, max: 20.0}
+  V10: {dtype: float, nullable: false, min: -30.0, max: 30.0}
+  V11: {dtype: float, nullable: false, min: -10.0, max: 20.0}
+  V12: {dtype: float, nullable: false, min: -20.0, max: 10.0}
+  V13: {dtype: float, nullable: false, min: -10.0, max: 10.0}
+  V14: {dtype: float, nullable: false, min: -25.0, max: 15.0}
+  V15: {dtype: float, nullable: false, min: -10.0, max: 10.0}
+  V16: {dtype: float, nullable: false, min: -30.0, max: 20.0}
+  V17: {dtype: float, nullable: false, min: -30.0, max: 15.0}
+  V18: {dtype: float, nullable: false, min: -15.0, max: 10.0}
+  V19: {dtype: float, nullable: false, min: -10.0, max: 10.0}
+  V20: {dtype: float, nullable: false, min: -60.0, max: 40.0}
+  V21: {dtype: float, nullable: false, min: -40.0, max: 35.0}
+  V22: {dtype: float, nullable: false, min: -15.0, max: 15.0}
+  V23: {dtype: float, nullable: false, min: -50.0, max: 30.0}
+  V24: {dtype: float, nullable: false, min: -10.0, max: 10.0}
+  V25: {dtype: float, nullable: false, min: -15.0, max: 15.0}
+  V26: {dtype: float, nullable: false, min: -10.0, max: 10.0}
+  V27: {dtype: float, nullable: false, min: -30.0, max: 35.0}
+  V28: {dtype: float, nullable: false, min: -20.0, max: 40.0}
+  Amount: {dtype: float, nullable: false, min: 0.0, max: 30000.0}
+  Class: {dtype: int, nullable: false, allowed: [0, 1]}
 
-# Общие ограничения на таблицу
 table:
   min_rows: 200
-  # доля положительного класса: если вышла за пределы — данные, скорее всего, сломались
-  target_share: {min: 0.05, max: 0.60}
+  target_share: {min: 0.0005, max: 0.35}
