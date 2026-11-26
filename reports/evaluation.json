@@ -1,0 +1,60 @@
+{
+  "primary_metric": "pr_auc",
+  "level": 0.95,
+  "n_bootstrap": 1000,
+  "models": {
+    "dummy": {
+      "value": 0.001717,
+      "ci_low": 0.00133,
+      "ci_high": 0.002128,
+      "n_bootstrap": 1000,
+      "level": 0.95
+    },
+    "baseline": {
+      "value": 0.693008,
+      "ci_low": 0.565546,
+      "ci_high": 0.819106,
+      "n_bootstrap": 1000,
+      "level": 0.95
+    },
+    "boosting": {
+      "value": 0.855723,
+      "ci_low": 0.759252,
+      "ci_high": 0.933596,
+      "n_bootstrap": 1000,
+      "level": 0.95
+    },
+    "nn": {
+      "value": 0.865706,
+      "ci_low": 0.780639,
+      "ci_high": 0.937233,
+      "n_bootstrap": 1000,
+      "level": 0.95
+    }
+  },
+  "delta_best_vs_baseline": {
+    "best": "boosting",
+    "baseline": "baseline",
+    "delta": 0.158557,
+    "ci_low": 0.072594,
+    "ci_high": 0.243976,
+    "level": 0.95
+  },
+  "best": "boosting",
+  "test_metrics_best": {
+    "roc_auc": 0.974466,
+    "pr_auc": 0.855723,
+    "f1": 0.746988,
+    "recall": 0.873239,
+    "precision": 0.652632,
+    "balanced_accuracy": 0.93622,
+    "accuracy": 0.998984,
+    "log_loss": 0.005977,
+    "brier": 0.000916
+  },
+  "calibration": {
+    "brier": 0.000916,
+    "ece": 0.002928,
+    "n_bins": 10
+  }
+}
