@@ -1,0 +1,255 @@
+{
+  "evidently_version": "0.7.23",
+  "reference": "train",
+  "reference_rows": 834,
+  "current_rows": 179,
+  "shift": {
+    "source": "simulated",
+    "rules": [
+      {
+        "column": "Amount",
+        "kind": "scale",
+        "factor": 1.5
+      },
+      {
+        "column": "V1",
+        "kind": "add",
+        "value": 1.2
+      }
+    ]
+  },
+  "columns_checked": 29,
+  "drifted_columns": [
+    "Amount",
+    "V1"
+  ],
+  "share_drifted": 0.069,
+  "dataset_drift": false,
+  "prediction_drift": true,
+  "evidently_overall": {
+    "count": 3.0,
+    "share": 0.1,
+    "drift_share_threshold": 0.5
+  },
+  "columns": [
+    {
+      "column": "Amount",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.04657076231258421,
+      "drifted": true
+    },
+    {
+      "column": "V1",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 8.227706012778079e-17,
+      "drifted": true
+    },
+    {
+      "column": "V2",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.2633939315096768,
+      "drifted": false
+    },
+    {
+      "column": "V3",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.4633370748916139,
+      "drifted": false
+    },
+    {
+      "column": "V4",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.9084273473504191,
+      "drifted": false
+    },
+    {
+      "column": "V5",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.9618567153356145,
+      "drifted": false
+    },
+    {
+      "column": "V6",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.23808349235243523,
+      "drifted": false
+    },
+    {
+      "column": "V7",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.44152083776009093,
+      "drifted": false
+    },
+    {
+      "column": "V8",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.44565997292012643,
+      "drifted": false
+    },
+    {
+      "column": "V9",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.25656688641886305,
+      "drifted": false
+    },
+    {
+      "column": "V10",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.6664042615180829,
+      "drifted": false
+    },
+    {
+      "column": "V11",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.21675850604961264,
+      "drifted": false
+    },
+    {
+      "column": "V12",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.245214577084818,
+      "drifted": false
+    },
+    {
+      "column": "V13",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.8585775622165926,
+      "drifted": false
+    },
+    {
+      "column": "V14",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.34836866014863416,
+      "drifted": false
+    },
+    {
+      "column": "V15",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.8687169453106902,
+      "drifted": false
+    },
+    {
+      "column": "V16",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.5220524205707258,
+      "drifted": false
+    },
+    {
+      "column": "V17",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.9554738729960803,
+      "drifted": false
+    },
+    {
+      "column": "V18",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.8353055692171517,
+      "drifted": false
+    },
+    {
+      "column": "V19",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.8543280626087673,
+      "drifted": false
+    },
+    {
+      "column": "V20",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.8782024639205094,
+      "drifted": false
+    },
+    {
+      "column": "V21",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.22152639847795344,
+      "drifted": false
+    },
+    {
+      "column": "V22",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.3665541034942472,
+      "drifted": false
+    },
+    {
+      "column": "V23",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.6380366522334724,
+      "drifted": false
+    },
+    {
+      "column": "V24",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.8604771888581125,
+      "drifted": false
+    },
+    {
+      "column": "V25",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.5320277344221813,
+      "drifted": false
+    },
+    {
+      "column": "V26",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.4488950710318325,
+      "drifted": false
+    },
+    {
+      "column": "V27",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.8863071250353208,
+      "drifted": false
+    },
+    {
+      "column": "V28",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.5443717581293283,
+      "drifted": false
+    },
+    {
+      "column": "prediction",
+      "method": "K-S p_value",
+      "threshold": 0.05,
+      "value": 0.004720439408254766,
+      "drifted": true
+    }
+  ],
+  "quality": {
+    "metric": "pr_auc",
+    "reference": 1.0,
+    "current": 1.0,
+    "drop": 0.0
+  },
+  "alerts": [],
+  "action": "наблюдать",
+  "smoke": true
+}

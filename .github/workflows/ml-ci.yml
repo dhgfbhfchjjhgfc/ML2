@@ -1,0 +1,33 @@
+name: ML-CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.14
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Run pytest (data, model, api)
+        run: uv run pytest tests/
+
+      - name: Smoke Training
+        run: uv run python -m mlproject.train --smoke --output-dir .cache/smoke
+
+      - name: Smoke Monitor
+        run: uv run python -m mlproject.monitor --smoke

@@ -36,12 +36,11 @@ def test_values_in_allowed_ranges(sample_df, schema):
 def test_splits_do_not_leak(splits, cfg):
     report = leakage_report(splits, cfg)
     assert report["ok"], report
-    
-def test_custom_fraud_class_binary(sample_data):
-    """Свой тест 1: колонка Class содержит только бинарные метки 0 и 1."""
-    unique_vals = set(sample_data["Class"].unique())
+
+def test_custom_fraud_class_binary(sample_df):
+    unique_vals = set(sample_df["Class"].unique())
     assert unique_vals.issubset({0, 1})
 
-def test_custom_amount_non_negative(sample_data):
-    """Свой тест 2: суммы транзакций не могут быть отрицательными."""
-    assert (sample_data["Amount"] >= 0).all()
+
+def test_custom_amount_non_negative(sample_df):
+    assert (sample_df["Amount"] >= 0).all()
