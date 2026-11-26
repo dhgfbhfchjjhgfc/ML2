@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "dataset": "V20",
+  "track": "classic",
+  "task": "binary",
+  "primary_metric": "pr_auc",
+  "higher_is_better": true,
+  "success_threshold": 0.8,
+  "split": {
+    "strategy": "stratified",
+    "train": 192963,
+    "val": 41350,
+    "test": 41350
+  },
+  "smoke": false,
+  "baseline": "baseline",
+  "best": "boosting",
+  "selected_by": "val_pr_auc",
+  "models": {
+    "dummy": {
+      "family": "dummy",
+      "framework": "sklearn",
+      "params": {},
+      "fit_seconds": 0.961,
+      "val": {
+        "roc_auc": 0.5,
+        "pr_auc": 0.001717,
+        "f1": 0.0,
+        "recall": 0.0,
+        "precision": 0.0,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.998283,
+        "log_loss": 0.012648,
+        "brier": 0.001714
+      },
+      "test": {
+        "roc_auc": 0.5,
+        "pr_auc": 0.001717,
+        "f1": 0.0,
+        "recall": 0.0,
+        "precision": 0.0,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.998283,
+        "log_loss": 0.012648,
+        "brier": 0.001714
+      }
+    },
+    "baseline": {
+      "family": "linear",
+      "framework": "sklearn",
+      "params": {
+        "C": 1.0,
+        "class_weight": "balanced"
+      },
+      "fit_seconds": 2.286,
+      "val": {
+        "roc_auc": 0.968422,
+        "pr_auc": 0.653868,
+        "f1": 0.11257,
+        "recall": 0.84507,
+        "precision": 0.060302,
+        "balanced_accuracy": 0.91121,
+        "accuracy": 0.977122,
+        "log_loss": 0.111517,
+        "brier": 0.023095
+      },
+      "test": {
+        "roc_auc": 0.991245,
+        "pr_auc": 0.693008,
+        "f1": 0.128655,
+        "recall": 0.929577,
+        "precision": 0.06911,
+        "balanced_accuracy": 0.954021,
+        "accuracy": 0.97838,
+        "log_loss": 0.108578,
+        "brier": 0.021779
+      }
+    },
+    "boosting": {
+      "family": "boosting",
+      "framework": "lightgbm",
+      "params": {
+        "library": "lightgbm",
+        "n_estimators": 300,
+        "learning_rate": 0.03647316284911211,
+        "num_leaves": 13,
+        "class_weight": "balanced",
+        "min_child_samples": 30,
+        "subsample": 0.6557975442608167,
+        "colsample_bytree": 0.6460723242676091,
+        "reg_lambda": 0.029204338471814112,
+        "subsample_freq": 1
+      },
+      "fit_seconds": 6.069,
+      "val": {
+        "roc_auc": 0.975132,
+        "pr_auc": 0.791147,
+        "f1": 0.666667,
+        "recall": 0.774648,
+        "precision": 0.585106,
+        "balanced_accuracy": 0.886852,
+        "accuracy": 0.99867,
+        "log_loss": 0.006681,
+        "brier": 0.001145
+      },
+      "test": {
+        "roc_auc": 0.974466,
+        "pr_auc": 0.855723,
+        "f1": 0.746988,
+        "recall": 0.873239,
+        "precision": 0.652632,
+        "balanced_accuracy": 0.93622,
+        "accuracy": 0.998984,
+        "log_loss": 0.005977,
+        "brier": 0.000916
+      }
+    },
+    "nn": {
+      "family": "nn",
+      "framework": "torch",
+      "params": {
+        "framework": "auto",
+        "hidden": [
+          128,
+          64
+        ],
+        "dropout": 0.2,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "epochs": 20,
+        "batch_size": 128,
+        "patience": 6
+      },
+      "fit_seconds": 109.611,
+      "val": {
+        "roc_auc": 0.966314,
+        "pr_auc": 0.780995,
+        "f1": 0.778626,
+        "recall": 0.71831,
+        "precision": 0.85,
+        "balanced_accuracy": 0.859046,
+        "accuracy": 0.999299,
+        "log_loss": 0.004192,
+        "brier": 0.000576
+      },
+      "test": {
+        "roc_auc": 0.972366,
+        "pr_auc": 0.865706,
+        "f1": 0.836879,
+        "recall": 0.830986,
+        "precision": 0.842857,
+        "balanced_accuracy": 0.91536,
+        "accuracy": 0.999444,
+        "log_loss": 0.002831,
+        "brier": 0.000435
+      }
+    }
+  },
+  "mlflow_run_id": "66b40c9e193a49dba105599c9e685e85",
+  "generated_at": "2026-11-26T06:41:26+00:00"
+}
